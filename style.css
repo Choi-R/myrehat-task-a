@@ -1,0 +1,144 @@
+/*
+Theme Name: MyRehat Test
+Theme URI: https://myrehat.com/
+Description: Child theme of Hello Elementor for Junior SE practical test. Contains intentional bugs.
+Author: MyRehat
+Template: hello-elementor
+Version: 1.0.0
+Text Domain: myrehat-test
+*/
+
+/* A7: Prevent horizontal body scroll */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* A3: Sticky Bold Top CTA Bar */
+.trails-sticky-cta {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    background: #111;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.trails-sticky-cta .cta-btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
+.trails-sticky-cta .cta-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+
+.trails-sticky-cta .cta-line {
+    background-color: #06c755;
+    color: #fff;
+}
+
+/* Trails test page styles */
+.site-header-trails { background: #0c6b4f; color: #fff; padding: 32px 20px; text-align: center; }
+.site-header-trails h1 { font-size: 32px; color: #fff; margin-bottom: 8px; }
+.site-header-trails #main-search { margin-top: 14px; padding: 10px; font-size: 15px; width: min(420px, 90%); }
+.trails-promo { background: #fff3cd; padding: 12px 20px; text-align: center; }
+.trails-main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.trails-search-row { display: flex; gap: 10px; margin-bottom: 16px; }
+.trails-search-row input, .trails-search-row select { padding: 10px; font-size: 15px; flex: 1; }
+
+/* A7: Responsive Cards grid/flex - wrap cards so 390px does not overflow */
+.trails-cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 14px; 
+}
+
+.trail-card { 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 14px; 
+    flex: 1 1 280px; 
+    min-width: 0; 
+    max-width: 100%;
+    background: #fff; 
+}
+
+.trail-card h3 { font-size: 17px; margin-bottom: 6px; }
+.trail-card .price { font-weight: bold; color: #0c6b4f; }
+#trails-no-results { color: #a00; margin: 12px 0; }
+.trails-booking { margin-top: 28px; border-top: 2px solid #eee; padding-top: 18px; }
+.trails-booking form { display: flex; flex-direction: column; gap: 10px; max-width: 420px; width: 100%; }
+.trails-booking input { padding: 9px; font-size: 15px; }
+.trails-booking button { padding: 11px; background: #0c6b4f; color: #fff; border: 0; cursor: pointer; }
+#trails-total { font-weight: bold; }
+#trails-confirmation { margin-top: 12px; border: 1px solid #0c6b4f; border-radius: 8px; padding: 12px; background: #eef7f2; }
+
+/* A4 & A8: Footer Styling */
+.trails-footer { background: #222; color: #ccc; padding: 28px 20px; margin-top: 30px; text-align: center; }
+.trails-footer .footer-links { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 14px; }
+.trails-footer .footer-links a { color: #fff; font-weight: 600; text-decoration: none; }
+.trails-footer .footer-links a:hover { text-decoration: underline; }
+.trails-footer .footer-socials { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
+.trails-footer .footer-socials a { color: #bbb; text-decoration: none; font-size: 14px; }
+.trails-footer .footer-socials a:hover { color: #25d366; }
+
+/* A7: Mobile 390px fixes (Keep .trails-promo visible, single column layout) */
+@media (max-width: 600px) {
+  /* Previously was display: none; now explicitly restored */
+  .trails-promo { 
+      display: block !important; 
+      font-size: 13px;
+  }
+  .trails-search-row { 
+      flex-direction: column; 
+  }
+  .trails-cards {
+      flex-direction: column;
+  }
+  .trail-card {
+      width: 100%;
+  }
+}
+
+/* Ensure sticky buttons clear the WP Admin bar when logged in */
+body.admin-bar .trails-sticky-cta {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .trails-sticky-cta {
+        top: 46px; /* WP admin bar height on mobile */
+    }
+}
+
+/* Ensure CTA buttons are distinctly bold */
+.trails-sticky-cta .cta-btn {
+    font-weight: 800 !important;
+    letter-spacing: 0.8px;
+}
+
+/* Suppress the redundant parent theme footer copyright line */
+.site-footer {
+    display: none !important;
+}
+
+/* Fix spacing between search/filter row and cards */
+.trails-search-row {
+    margin-bottom: 24px;
+}
