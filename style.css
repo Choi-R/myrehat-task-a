@@ -142,3 +142,47 @@ body.admin-bar .trails-sticky-cta {
 .trails-search-row {
     margin-bottom: 24px;
 }
+
+@media (max-width: 600px) {
+  .trails-promo { 
+      display: block !important; 
+      font-size: 13px;
+  }
+  
+  .trails-search-row { 
+      flex-direction: column; 
+      margin-bottom: 16px;
+  }
+
+  /* Fix 390px card blank space: tighter gap and full natural width */
+  .trails-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+  }
+
+  .trail-card {
+      width: 100%;
+      min-width: 0;
+      flex: none;
+      padding: 14px 16px;
+      margin-bottom: 0;
+  }
+
+  .trail-card h3 {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 4px;
+  }
+
+  .trail-card p {
+      margin: 4px 0 8px 0;
+      font-size: 14px;
+      color: #555;
+  }
+
+  .trail-card .price {
+      display: inline-block;
+      font-size: 14px;
+  }
+}
