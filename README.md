@@ -5,3 +5,5 @@
 Prompt Log: https://share.gemini.google/4KDQrlud4hwQ
 
 Drive link: https://drive.google.com/drive/folders/1NX5RJxw3OeHxZufwFYvxHyK06NjXHGVk?usp=sharing
+
+The hardest bugs to fix are the ones not mentioned in the ticket. While wrapping up my changes, I noticed the trail cards were still awkwardly huge on mobile and the date field failed to reject past dates.
